@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <p>Hva er hovedstaden i Mongolia?</p>
+    <input type="text" id="inpSvar" placeholder="skriv inn ditt svar her"
+           <button id="btnSvar> send inn"></button>
+    <div id="divSvar"></div>
+
+
+
+
+
+<script>
+
+    var inpSvar = document.getElementById("inpSvar");
+    var btnSvar = document.getElementById("btnSvar");
+    var divSvar = document.getElementById("divSvar");
+
+    btnSvar.onclick = function(){
+        if(inpSvar.value === "Ulan Bator || "UlanBaatar");
+            divSvar.innerHTML = "gratulerer du er veldig flink!";
+    }
+    else{// kodoe som kjører hvis brukeren ikke skrive ublan bator
+        divSvar.innerHTML = "det var feil! du er dårlig i geografi"
+    }
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            padding: 50px;
+        }
+        #divBoks { width: 300px; height: 30px; background-color: #F4E9C2; transition: 1s; margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<form id="frmEndre">
+    <label for inpBredde>Bredde</label>
+    <input type="number" id="inpBredde">
+    <label for inpHoyde>Høyde</label>
+    <input type="number" id="inpHoyde">
+    <label for inpXPos>X-posisjon</label>
+    <input type="number" id="inpXPos">
+    <label for inpYPos>Y-posisjon</label>
+    <input type="number" id="inpYPos">
+    <label for inpAvrunding>Hjørneavrunding</label>
+    <input type="range" id="inpAvrunding" min="0" max="100" step="1">
+    <label for inpFarge>Farge</label>
+    <input type="color" id="inpFarge">
+    <button type="submit">Endre</button>
+</form>
+<div id="divBoks"></div>
+<script>
+    var frmEndre = document.getElementById("frmEndre");
+    var inpBredde = document.getElementById("inpBredde");
+    var inpHoyde = document.getElementById("inpHoyde");
+    var inpXPos = document.getElementById("inpXPos");
+    var inpYPos = document.getElementById("inpYPos");
+    var inpAvrunding = document.getElementById("inpAvrunding");
+    var inpFarge = document.getElementById("inpFarge");
+    var divBoks = document.getElementById("divBoks");
+    frmEndre.onsubmit = function(evt) {
+        evt.preventDefault();
+        divBoks.style.width = inpBredde.value+"px";
+        divBoks.style.height = inpHoyde.value+"px";
+        divBoks.style.marginLeft = inpXPos.value+"px";
+        divBoks.style.marginTop = inpYPos.value+"px";
+        divBoks.style.borderRadius = inpAvrunding.value+"px";
+        divBoks.style.backgroundColor = inpFarge.value;
+    }
+</script>
+
+
+
+
+
+</body>
+</html>

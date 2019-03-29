@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    var a;
+
+    //datatyper
+
+    a = 3; // a får verdien 3 som er datatypen number
+    a = "hei"; // a får verdien "hei" som er datatypen string
+    a= [3, 4, "hei", 2, "hallo"]// a blir tilordnet en array
+    a = {// a blir tilordnet et objekt, med egneskap og navn og jobb.
+        navn: "Thor",
+        jobb: "IT-lærer"
+    }
+    a = true // kan også være false, dette er en datatypen boolean, den enten true eller false
+
+    // metoder som vi kan bruke på datatyper
+     // Arrays
+    var filmer = ["Ben Hur", "Fight Club", "The Darjeeling Limited"];
+    filmer.push("Bølgen");
+
+    var megSelv = {
+        navn: "Thor",
+        jobb: "It-lærer"
+    }
+    megSelv.navn;
+    megSelv.navn = "Jens Christian"
+
+    //variabler
+    var enVariabel = 23;
+
+    enVariabel = 43;
+    enVariabel += 1; //envariabel = envariabel +1; legger til en på en variabel
+
+    const PI= 3.14;
+
+    //casting - endre datatype
+    var enString = "35";
+    Number(enString); // endrer datatypen på string til å være et tall
+
+    //lage referanser til HTML-objekter
+    var minDiv = document.getElementById("minDiv");
+
+    //endre attrbutter på HTML-elementer
+    minBilde.src "nyttBilde.jpg";
+    minDiv.style.backgroundColor = blue;
+
+
+    document.write("Hallo");
+    minDiv.innerHTML = "ny tekst som kommer inn i HTML-elementet minDiv"
+
+    //
+</script>
+
+</body>
+</html>

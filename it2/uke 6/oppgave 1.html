@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        h1{
+            position: absolute;
+            font-family: Baghdad;
+            color: #0d99a5;
+            text-shadow: #5e5e5e;
+
+
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+<h1 id="Overskrift">Overskrift</h1>
+<img id="sol" src="sol1.png" alt="Bilde av sol">
+
+ <button id="play">Play</button>
+ <button id="pause">Pause</button>
+ <button id="snu">Snu</button>
+
+<input type="range" id="slider" min="0.1" max="3" step="0.1">
+
+<script>
+
+    const sol = document.querySelector("#sol");
+    const play = document.querySelector("#play");
+    const pause = document.querySelector("#pause");
+    const snu = document.querySelector("#snu");
+    const slider = document.querySelector("#slider");
+
+
+    const Overskrift = document.querySelector("#Overskrift");
+
+
+
+
+    let OverskriftCSS =[
+        {
+            opacity:"0",
+        },
+        {
+            opacity:"1",
+        }
+
+    ];
+
+    let OverskriftEgenskaper ={
+        duration: 2000,
+        iterations: 1,
+
+    };
+
+
+    var sol=document.getElementById("sol");
+    sol.animate([
+        {transform:"rotate(0deg)", marginLeft: "10px"},
+        {transform:"rotate(1440deg)",marginLeft:"500px"},
+
+    ],{duration:3000,
+        direction:"alternate",
+        iterations:Infinity,
+        easing:"ease-in-out"
+
+    });
+
+
+
+    Overskrift.animate(OverskriftCSS,OverskriftEgenskaper);
+
+
+    play.onclick = function () {
+        billAni.play();
+    };
+    pause.onclick = function () {
+        billAni.pause();
+    };
+    snu.onclick = function () {
+        billAni.reverse();
+    };
+    slider.onchange = function () {
+        billAni.playbackRate = slider.value;
+    }
+
+
+</script>
+
+</body>
+</html>

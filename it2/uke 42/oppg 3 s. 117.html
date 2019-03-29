@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+a)
+<p id="melding"></p>
+
+<script>
+
+    var melding = document.getElementById("melding");
+
+    var saldo =10000;
+    function uttak(belop) {
+        saldo = saldo - belop;
+        return"Du har tatt ut kr"+belop+".Ny saldo er kr"+saldo;
+
+    }
+    melding.innerHTML=uttak(1500);
+
+
+
+</script>
+
+b)
+
+//hvis det ikke er penger i kotoen kan man ikke ta ut penger!
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            padding: 50px;
+        }
+        #planke { width: 300px; height: 30px; background-color: red; transition: 1s;  margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<form id="frmVinkel">
+    <input type="number" id="inpVinkel">
+    <button type="submit">Sett vinkel</button>
+</form>
+<div id="planke"></div>
+<script>
+    var frmVinkel = document.getElementById("frmVinkel");
+    var inpVinkel = document.getElementById("inpVinkel");
+    var planke = document.getElementById("planke");
+    frmVinkel.onsubmit = function(evt) {
+        evt.preventDefault();
+        var vinkel = Number(inpVinkel.value); //Gjør om tekst-input til tall
+        planke.style.transform = "rotate("+vinkel+"deg)";
+    }
+</script>
+
+
+</body>
+</html>

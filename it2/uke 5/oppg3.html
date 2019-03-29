@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+    #divBoks{
+        width: 30px; height: 30px; background-color: firebrick; margin-top: 100px; position:absolute;
+    }
+</style>
+</head>
+<body>
+<div id="divBoks"></div>
+<script>
+    var divBoks =document.getElementById("divBoks");
+    window.onclick=function(){
+        divBoks.style.marginTop=(event.clientY-22.5)+"px";
+        divBoks.style.marginLeft=(event.clientX-22.5)+"px";
+    }
+</script>
+</body>
+
+
+</body>
+</html>

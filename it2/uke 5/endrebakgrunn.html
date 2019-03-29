@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>endre bakgrunn</title>
+    <style>
+        body{
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+   <input type="text">
+
+
+   <script>
+       let inputFelt = document.querySelector("#inputFelt");
+
+
+       document.body.style.transition= "1s";
+
+       inputFelt.oninput=function () {
+           document.body.style.backgroundColor=inputFelt.value;
+       }
+
+   </script>
+
+
+
+</body>
+</html>

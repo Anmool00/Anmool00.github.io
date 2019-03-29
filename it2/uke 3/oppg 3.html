@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+div id=divBilde>
+<button id="btnTilbake">Tilbake</button>
+<img id=imgBilde>
+<button id="btnFram">Fram</button>
+</div>
+<script>
+    var imgBilde = document.getElementById("imgBilde");
+    var btnTilbake = document.getElementById("btnTilbake");
+    var btnFram = document.getElementById("btnFram");
+    var arrFeriebilder=["image1.jpg", "images2.jp","image3.jpeg", "images4.jpeg"];
+    var index =0;
+    document.write(arrFeriebilder);
+    imgBilde.src =arrFeriebilder[index];
+    btnTilbake.onclick=function(){
+        index--;
+        imgBilde.src=arrFeriebilder[index];
+    }
+    btnFram.onclick=function(){
+        index++;
+        imgBilde.src=arrFeriebilder[index];
+    }
+</script>
+
+j
+
+
+
+</body>
+</html>

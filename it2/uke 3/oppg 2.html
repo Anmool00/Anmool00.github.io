@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>TYPER TRER!</p>
+
+
+<ol id="listTrer"></ol>
+
+
+
+<script>
+
+    var listTrer= document.getElementById("listTrer");
+    var trer = ["lønn", "hassel", "bjørk", "eik", "blodlønn", "furu","gran"];
+
+    trer.splice(3,1);// a) fjerner elementet
+
+    trer.splice(3,3,"bjørk","hengebjørk");// oppgave b, bytter ut et element med et annet.
+
+    trer.splice(6,7);// c) fjerner de to siste elementene
+
+    trer.splice(6,7, "fjellbjørk", "dvergbjrøk");// D) satte inn to nye typer trer.
+
+    trer.sort();// oppg e, sorterer alfabetisk.
+
+
+
+    for(var liste of trer){
+        listTrer.innerHTML+="<li>"+liste+"</li>";
+    };
+
+
+
+
+</script>
+
+</body>
+</html>

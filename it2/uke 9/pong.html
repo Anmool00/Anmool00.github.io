@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<canvas width="600" height="400" id="minCanvas"></canvas>
+
+<script>
+    var minCanvas= document.getElementById("minCanvas");
+    var ctx = minCanvas.getContext("2d");
+    var theGamelsOn=true; //global variabel
+    function tegnBane() {
+        console.log("Tegner opp banen");
+    }
+    function tegnBall() {
+        console.log("Tegner opp ballen");
+
+    }
+    function tegnRacket() {
+        console.log("Tegner opp Racketen");
+    }
+
+    function sjekkOmBallTrefferVegg() {
+        console.log("Sjekker om ballen treffer en vegg");
+    }
+    function sjekkOmBallTrefferRacket() {
+        console.log("Sjekker om ballen treffer racketen");
+    }
+    function sjekkOmBallErUtenforBanen() {
+        console.log("Sjekker om ballen er utenfor banen");
+    }
+
+    function gameLoop() {
+        tegnBane();
+        tegnBall();
+        tegnRacket();
+        sjekkOmBallTrefferVegg();
+        sjekkOmBallTrefferRacket();
+        sjekkOmBallErUtenforBanen();
+        if (theGamelsOn){
+            requestAnimationFrame(gameLoop);
+        }
+    }
+
+    gameLoop();
+
+    var bane={//objekt bane
+    bredde: minCanvas.width, //bredden lik canvas
+    hoyde: minCanvas.height,
+    gressfarge: "DarkGreen",
+    linjefarge: "White",
+    linjetykkelse: 4
+
+    };
+    function tegnBane() {//funksjoner som tegner banen
+        ctx.fillStyle= bane.gressfarge;//Farge på gresset
+        ctx.fillRect(0,0,bane.bredde,bane.hoyde);//gresset
+        ctx.fillStyle=bane.linjefarge;//f på midtlinjen
+        ctx.fillRect(bane.bredde/2-bane.linjetykkelse/2,0,bane.linjetykkelse,bane.hoyde);//tegner midtlinje
+
+    }
+
+    var ball={
+       radius: 7,
+       xpos:100, //x-posisjonen ved start
+       ypos:100, //y-posisjon ved start
+       farge: "yellow",
+       xretning:-1, //mot venstre
+       yretning: 1, //nedover
+       xfart: 4,
+       yfart:4
+
+    };
+    function tegnBall() { //tegner opp en sirkel
+        ctx.beginPath();//starter tegning av buen
+        ctx.arc(ball.xpos,ball.ypos,ball.radius,0,Math.PI*2);  //tegner en sirkel
+        ctx.closePath();//lukker sirkelbuen
+        ctx.fillStyle=ball.farge;
+        ctx.fill();
+        ball.xpos=ball.xpos+ball.xfart*ball.xretning;
+        ball.ypos=ball.ypos+ball.yfart*ball.yretning;
+        
+    }
+    function  sjekkOmBallTrefferVegg() {
+        if(ball.xpos<=ball.radius){
+            ball.xretning=1;
+        }
+        if(ball.ypos+ball.raidus>=bane.hoyde){
+            ball.yretning=-1;
+
+        }
+        if
+
+    }
+
+</script>
+
+
+
+
+</body>
+</html>

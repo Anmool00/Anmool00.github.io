@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #spill{position: relative;
+            background-image: url("blå.jpg");
+            width: 728px; height: 425px;}
+        #fugl{position: absolute;
+            background-image: url("batman.png");
+            width: 180px; height: 140px;
+            left: 30px; /*litt ut fra kanten*/}
+
+        body{
+            background-image: url("stjerne.jpg");
+            color: white;
+
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="spill"> <div id="fugl"></div></div>
+
+<h1 id="hAntTrykk">Antall trykk: 0</h1>
+
+
+<script>
+    var spill= document.getElementById("spill");
+    var fugl = document.getElementById("fugl");
+    var hAntTrykk = document.getElementById("hAntTrykk");
+    var krasjhoyde=360;
+    var fuglpos= 100;
+    var fuglenFlyr= true;
+    var gravitasjon= 0.5;
+    var fallfart=1;
+    var bgpos= 0;
+    var bgfart= -1;
+    var antTrykk = 0;
+
+
+    function fly() {
+        fallfart += gravitasjon;
+        fuglpos += fallfart;
+        fugl.style.top = fuglpos + "px";
+        if(fuglpos>krasjhoyde){
+            fuglenFlyr=false;}
+    };
+    document.onkeydown= function (evt) {
+        flaks();
+        //fuglpos += 1;
+        console.log("opp");
+        antTrykk += 1;
+    };
+
+
+    function bevegBakgrunn() {
+        bgpos+=bgfart;
+        spill.style.backgroundPosition=bgpos+ "px 0px";
+
+    };
+    function gameLoop() {
+        bevegBakgrunn();
+        fly();
+        if(fuglenFlyr){
+            requestAnimationFrame(gameLoop);
+        };
+        hAntTrykk.innerHTML = "Antall trykk:" + antTrykk;
+    };
+    gameLoop();
+    function flaks() {
+        fallfart=-4;
+    }
+    spill.onclick=flaks();
+
+
+
+
+
+    
+
+
+</script>
+
+</body>
+</html>

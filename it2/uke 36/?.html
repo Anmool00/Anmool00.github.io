@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>enkel kalkulator med input</title>
+</head>
+<body>
+
+<h1>En enkel kalkulator med input</h1>
+
+<input type="number" id="inptall">
+<span id="spnResultat"></span>
+<br>
+<button id="btnRegnUt">Regn Ut</button>
+
+<script>
+
+    var inptall = document.getElementById("inptall");
+    var spnResultat = document.getElementById("spnResultat");
+    var btnRegnUt = document.getElementById("btnRegnUt");
+
+    onkeyup =function(){
+        spnResultat.innerHTML = 20 + Number(inptall.value);
+    };
+
+
+</script>
+
+</body>
+</html>

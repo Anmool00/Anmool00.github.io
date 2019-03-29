@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        #firkant{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin-left: 40px;
+            margin-top: 40px;
+            border-radius: 60%;
+        }
+
+
+    </style>
+
+
+
+</head>
+<body>
+
+    <img src="last%20ned.jpeg" id="firkant"
+
+      <script>
+
+
+          var firkant =document.getElementById("firkant"); //oppretter en variabel som referer til div-elementet
+
+          document.onmousemove = function () {
+              var x = event.clientX - 100; // oppretter en variabel x som er x-kordinaten til posisjonen til musa på nettsida
+              var y = event.clientY - 100; // samme med Y
+              console.log("x= " + x); // skriver ut x-kordinatene i
+              console.log("y= " + y);
+
+              firkant.style.marginLeft = x + "px"; // firkant sin marginLeft skal være lik x verdien av x pluss stringen px
+              firkant.style.marginLeft = y + "px";
+
+              if(x <3000){
+                  console.log("X er mindre enn 400");
+                  firkant.src="last%20ned.jpeg";
+              }
+              else{
+                  console.log("x er større enn halvparten av vinduet");
+                  firkant.src="stran-palm-i30847.jpg"   ;
+              }
+          }
+
+
+         
+
+
+</body>
+</html>

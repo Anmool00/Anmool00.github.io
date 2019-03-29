@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #spill{position: relative;
+            background-image: url("blå.jpg");
+            width: 728px; height: 425px;}
+        #batman{position: absolute;
+            background-image: url("batman.png");
+            width: 180px; height: 140px;
+            left: 30px; /*litt ut fra kanten*/}
+
+        #gameOver{
+            transform: translateY(5px,180px);
+            color: red;
+        }
+
+        body{
+            background-image: url("stjerne.jpg");
+            color: white;
+
+        }
+
+
+    </style>
+</head>
+<body>
+<h1> BATMAN </h1>
+
+<div id="spill"> <div id="batman"></div></div>
+
+<h1 id="hAntTrykk">Antall trykk: 0</h1>
+
+
+
+
+<script>
+
+
+
+
+    var spill= document.getElementById("spill");
+    var batman = document.getElementById("batman");
+    var hAntTrykk = document.getElementById("hAntTrykk");
+    var krasjhoyde=360;// batman kan falle så mye... ned
+    var batmanpos= 100;// det er batmans y-posisjon
+    var batmannenFlyr= true;// når batman treffer bakken er det false
+    var gravitasjon= 0.5;// det er så mye som batman faller fortere og fortere
+    var fallfart=1; // batmans utgangsfasrt
+    var bgpos= 0; // bakgrunnsposisjon
+    var bgfart= -1;// bakgrunnen beveger seg mot venstre
+    var antTrykk = 0; // antall ganger man trykker på tasten
+
+
+    function fly() {
+        fallfart += gravitasjon;// setter på gravitasjonen
+        batmanpos += fallfart;// setter opp til en ny posisjon
+        batman.style.top = batmanpos + "px";// inn fra CSS
+        if(batmanpos>krasjhoyde){// da batman treffer bakken
+            batmannenFlyr=false;}// da spillet stopper
+    };
+    document.onkeydown= function (evt) {
+        flaks();
+        //batmanpos += 1;
+        console.log("opp");// tast for at batman skal kunne fly opp
+        antTrykk += 1;// hvilken som helst tast
+    };
+
+
+    function bevegBakgrunn() {
+        bgpos+=bgfart;// bgpos blir minsket, og bgfarten er negativ
+        spill.style.backgroundPosition=bgpos+ "px 0px";
+
+    };
+    function gameLoop() {
+        bevegBakgrunn();
+        fly();
+        if(batmannenFlyr){// ser om batman fortsatt flyr
+            requestAnimationFrame(gameLoop);// starter spillet på nytt
+        };
+        hAntTrykk.innerHTML = "Antall trykk:" + antTrykk;// viser til hvor mange trykk på tastaturen, når batman går opp
+
+    };
+    gameLoop();
+    function flaks() {
+        fallfart=-4;
+    }
+    spill.onclick=flaks();
+
+
+
+</script>
+
+</body>
+</html>

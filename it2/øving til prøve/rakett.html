@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-image: url("DeathOfAUniverseHeader.jpg");
+        }
+        @keyframes fly {
+            0%{
+                left: 10%;
+                bottom: 0;
+            }
+
+            50%{
+                left: 80%;
+                bottom: 0;
+
+            }
+
+            100%{
+                left: 90%;
+                bottom: 0;
+                transition:10s;
+                
+            }
+        }
+        #space {
+            position: absolute;
+            animation: fly 2s infinite;
+            
+        }
+    </style>
+</head>
+<body>
+
+<button id="btn"></button>
+
+<img src="rakett_ikon.png" alt="" id="space">
+
+<script>
+/*
+
+    const space= document.querySelector("img");
+    let startBtn = document.querySelector("#btn");
+
+    aniCS = [
+        0% {
+
+        left:"0px",
+            bottom:"0",
+
+
+        },
+        50%{
+        left:"200px",
+            bottom: "0",
+
+        },
+        100%{
+        left:"100px",
+            bottom:"0",
+            transition:"10s",
+        }
+    ];
+
+
+    aniEgenskaper={
+        duration:2000,
+        iteration: infinity,
+        easing:"ease-in-out",
+
+    };
+
+    let animasjon = space.animate(aniCS, aniEgenskaper);
+
+    startBtn.onclick = function () {
+        animasjon.pause();
+    }
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

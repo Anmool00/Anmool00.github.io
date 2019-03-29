@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>romraket</title>
+    <style>
+        body {
+            background-image: url("universe_moon_2_by_diegoskywallker-d566p6q.jpg");
+        }
+
+        @keyframes lande {
+            0% {
+                left: -20%;
+                bottom: 20%;
+                transform: rotate(90deg);
+
+            }
+            35% {
+                transform: rotate(-15deg);
+
+            }
+            100% {
+                left: 45%;
+                bottom: 38%;
+            }
+
+
+        }
+        @keyframes lette {
+            0% {
+                left: 50%;
+
+                bottom: 0;
+            }
+            100% {
+                bottom: 500%;
+            }
+
+        }
+
+        #rom {
+            animation: fly 5s infinite;
+            position: absolute;
+            left: 50%;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<img id="rom" src="51692462_342983476319299_6663634509839204352_n.png" alt="" style="animation: lande 5s ease 0s 1 normal forwards running;">
+<button id="btnLande">lande</button>
+<button id="btnLette">lette</button>
+
+<script>
+    var rom = document.getElementById("rom");
+    var btnLande = document.getElementById("btnLande");
+    var btnLette = document.getElementById("btnLette");
+
+    btnLande.onclick = function () {
+        rom.style.animation = "lande 5s forwards"
+
+    }
+    btnLette.onclick = function () {
+        rom.style.animation = "lette 5s forwards";
+
+    }
+
+
+
+</script>
+
+
+</body>
+</html>

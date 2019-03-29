@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+
+        body {
+            text-align: center;
+            font-family: "cursive";
+            font-size: 400%;
+            color: white;
+            background-color: whitesmoke;
+        }
+
+        header{
+            background-color: black;
+            filter: drop-shadow(0 5px 5px black);
+        }
+
+
+        
+        body> header> nav{
+            display: grid;
+            grid-auto-flow: column;
+        }
+
+
+
+        var boom = new Audio();
+        boom.src = "boom.wav";
+
+    </style>
+
+</head>
+
+
+<body>
+
+<nav>
+    <a href ="#" onmousedown ="boom.play()">neste </a>
+
+
+</nav>
+
+
+  <header>
+<p> MENY, VELG EN RETT</p>
+
+
+  </header>
+
+<img id="bilder" src="bilder/frukt 2.jpg" width="800" >
+
+<button id="forrige">Forrgie</button>
+<button id="neste">Neste</button>
+
+<button id="random">Tilfeldig bilde</button>
+
+
+<script>
+
+
+
+    const neste = document.getElementById("neste");
+    const forrige = document.getElementById("forrige");
+    const random = document.getElementById("random");
+
+    const bilder = document.getElementById("bilder");
+
+    let bildeListe = ["bilder/frukt 1.png", "bilder/frukt 2.jpg", "bilder/frukt 3.jpg", "bilder/frukt 4.jpg", "bilder/frukt 5.jpg"];
+
+    let n = 0
+        neste.onclick = function () {
+            n++
+            if (n > 4){
+                n=0
+            }
+            bilder.src = bildeListe [n];
+        }
+
+        forrige.onclick = function () {
+            n--
+            if (n < 0){
+                n=2
+            }
+      bilder.src = bildeListe [n];
+        }
+
+
+
+        }
+
+
+    body {
+        background-image: url("bilde.jpg");
+    }
+</script>
+</body>   
+</html>
+

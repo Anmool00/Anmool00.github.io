@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <title>Title</title>
+    <style>
+        body{
+            font-family: "Times New Roman";
+            background-color: white;
+            position: center;
+
+        }
+        input {
+            size: 10px;
+            position: center;
+            margin-top: 30px;
+            margin-left: 10px;
+
+        }
+        h1 {
+            font-size: 50px;
+            position: center;
+            margin-left: 500px;
+
+        }
+        header {
+            height: 150px;
+            color: white;
+            background-color: #0d99a5;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>VINDMØLLE PLASSERT I ET LANDSKAP</h1>
+</header>
+
+
+<label for="VINDSTYKE"> Skriv inn det du ønsker skal bli regnet ut i Norske kroner </label>
+<input type="text" id="VINDSTYKE"  value="0" onchange="VINDSTYRKEfunc()" />
+
+
+</br>
+<label for="WATT"> Regner ut Svenske kroner </label>
+<input type="text" id="WATT"  value="0" />
+
+
+
+
+</br>
+
+
+
+<script>
+    var VINDSTYRKE, WATT;
+    function init()
+    {
+        VINDSTYRKE = document.getElementById("VINDSTYRKE");
+        WATT = document.getElementById("WATT");
+
+
+    }
+
+    function VINDSTYRKEfunc()
+    {
+        VINDSTYRKE.value = parseFloat(VINDSTYRKE.value) * 3.7;
+        WATT.value = parseFloat(VINDSTYRKE.value) * 29.6;
+
+
+    }
+
+
+    init();
+</script>
+</body>
+</html>

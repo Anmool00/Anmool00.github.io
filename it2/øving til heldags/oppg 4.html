@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oppgave4</title>
+</head>
+<body>
+
+<h1>oppgave 1</h1>
+
+<style>
+
+
+    body {
+        text-align: center;
+        font-family: "cursive";
+        font-size: 400%;
+        color: white;
+        background-color: whitesmoke;
+    }
+
+    header{
+        background-color: black;
+        filter: drop-shadow(0 5px 5px black);
+    }
+
+
+
+    body> header> nav{
+        display: grid;
+        grid-auto-flow: column;
+    }
+
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<header>
+    <p> GRAMMYS</p>
+
+
+</header>
+
+<img id="bilder" src="albumcover/awaken.jpg" width="800" >
+
+<button id="forrige">Forrgie</button>
+
+<button id="neste">Neste</button>
+
+<button id="random">Tilfeldig bilde</button>
+
+
+<script>
+
+
+
+    const neste = document.getElementById("neste");
+    const forrige = document.getElementById("forrige");
+    const random = document.getElementById("random");
+
+    const bilder = document.getElementById("bilder");
+
+    let bildeListe = ["albumcover/24KMagic.jpg", "albumcover/444.jpg", "albumcover/awaken.jpg", "albumcover/damn.jpg", "albumcover/melodrama.jpg"];
+
+    let n = 0
+    neste.onclick = function () {
+        n++
+        if (n > 4){
+            n=0
+        }
+        bilder.src = bildeListe [n];
+    }
+
+    forrige.onclick = function () {
+        n--
+        if (n < 0){
+            n=2
+        }
+        bilder.src = bildeListe [n];
+    }
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transformere p-elementer</title>
+    <style>
+        body{
+
+        }
+        #boks1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        #boks1:hover{
+            transform-origin: left bottom;
+            transform: rotate(90deg);
+            transition: 5s;
+        }
+
+
+        #boks2 {
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+        }
+
+        #boks2:hover{
+            transition: center;
+            transform: rotate(60deg);
+        }
+
+
+        #boks3 {
+            background-color: #9dbdd6;
+            width: 100px;
+            height: 100px;
+        }
+        #boks3:hover{
+            transform: scale(2);
+        }
+
+        #boks4 {
+            background-color: #b36eda;
+            width: 100px;
+            height: 100px;
+        }
+        #boks4:hover {
+            transform: translate(1300px,390px);
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="boks1"></div>
+<div id="boks2"></div>
+<div id="boks3"></div>
+<div id="boks4"></div>
+
+
+
+</body>
+</html>

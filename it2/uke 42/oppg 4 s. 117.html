@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Mine favorittfilmer</h1>
+<ull id="favorittfilmer"></ull>
+
+<script>
+
+    var favorittfilmer=document.getElementById("favorittfilmer");
+    function giMegEtListepunkt(filmer) {
+        return"<li>"+filmer+"</li>";
+    }
+
+    favorittfilmer.innerHTML += giMegEtListepunkt("white house down");
+    favorittfilmer.innerHTML += giMegEtListepunkt("fury");
+    favorittfilmer.innerHTML += giMegEtListepunkt("Harry Potter");
+    favorittfilmer.innerHTML += giMegEtListepunkt("Narnia");
+
+
+
+
+</script>
+
+
+</body>
+</html>

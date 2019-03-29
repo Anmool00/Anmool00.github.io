@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<main>
+
+
+    <img id="bilde">src = "last ned.jpeg";
+
+
+</main>
+
+<img id="bilde">  <! -- Oppretter en tom bilde-tag -->
+
+<script>
+    var imgBilde = document.getElementById("bilde"); // Oppretter en variabel som refererer til bilde-elementet
+
+    var bildeArray = ["Aerial01, Aerial02, Aerial03"]; //oppretter en array med alle filene til bildene
+
+    var tilfeldigTall = Math.random()*2 // oppretter en variabel som er et til
+
+    var tilfeldigAvrundet = Math.round (tilfeldigTall); oppretter en variabel
+
+    imgBilde.src = bildeArray [tilfeldigAvrundet];
+
+
+    imgBilde.src = bildeArray[Math.round(Math.random(*2))];
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

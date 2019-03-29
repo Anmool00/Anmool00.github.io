@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<canvas id="dvdCanvas" width="400px" height="200px"></canvas>
+
+
+<script>
+    //referanser til html elementer
+    const dvdCanvas = document.querySelector("#dvdCanvas");
+    const ctx = dvdCanvas.getContext("2d");
+
+
+    //globale variabler
+    let figur1 = {
+        bredde: 200,
+        hoyde: 30,
+        xpos: 60,
+        ypos: 70,
+        farge: "green"
+        xfart:10,
+    };
+
+    let figur2 = {
+        bredde: 50,
+        hoyde: 30,
+        xpos: 150,
+        ypos: 150,
+        farge: "red"
+    };
+
+
+    //setup
+    tegnFirkant(figur1);
+    //ctx.fillStyle = firkant.farge
+    //ctx.fillRect(firkant.xpos,firkant.ypos, firkant.bredde, firkant. hoyde);
+
+
+    //funksjonsdefinisjoner
+    function gameLoop() {
+        tegnFirkant(figur1);
+        flyttfirkant(figur1);
+        requestAnimationFrame(gameLoop);
+
+    }
+
+
+    function tegnFirkant(firkant) {
+      ctx.fillStyle= firkant.farge;
+      ctx.fillRect(firkant.xpos,firkant.ypos,firkant.bredde,firkant.hoyde);
+    }
+
+    function flyttFirkant(firkant) {
+        firkant.xpos +1=;
+
+    }
+
+    function clearCanvas() {
+        ctx.fillStyle = "white";
+        ctx.fillRect(0,0,dvdCanvas,width,dvdCanvas,height);
+    }
+</script>
+</body>
+</html>

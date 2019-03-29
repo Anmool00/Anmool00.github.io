@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Prøv selv 10.1.2 a og b</title>
+</head>
+<body>
+<span id="visPoeng"></span>
+<script>
+    var visPoeng = document.getElementById("visPoeng");
+    var poeng = 0;
+    function tellOpp() {
+        visPoeng.innerHTML+= poeng + " poeng<br>";
+        poeng += 25;
+        if(poeng<=500){
+            tellOpp();
+        }
+    }
+    tellOpp();
+</script>
+</body>
+</html>
+
+10.1.3 og 10.1.4
+<style>
+    div {
+        float: left;
+        margin-right: 5px;
+        background-color: goldenrod;
+    }
+</style>
+</head>
+<body>
+<div id="visPoeng" style="position: absolute;"></div>
+<script>
+    var visPoeng = document.getElementById("visPoeng");
+    var poeng = 0;
+    var bredde = 25;
+    var hoyde = 200;
+    function tellOpp() {
+        visPoeng.style.left= poeng+"px";
+        visPoeng.innerHTML+= poeng + " poeng<br>";
+        poeng += 25;
+        if(poeng<=500){
+            requestAnimationFrame(tellOpp);
+        }
+    }
+    tellOpp();
+    function klikkMeg(){
+        bredde+=25;
+        hoyde+=25;
+        visPoeng.style.width= bredde+ "px";
+        visPoeng.style.height= hoyde+ "px";
+    }
+    visPoeng.onclick=klikkMeg;
+</script>
+</body>

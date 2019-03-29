@@ -1,0 +1,44 @@
+<style>
+
+    img{
+        position: absolute;
+        width: 150px;
+    }
+
+</style>
+</head>
+<body>
+
+<img id="bill" src="bill.jpg" alt="Bilde av Bill Clinton">
+
+<script>
+    const bill = document.querySelector("#bill");
+
+
+
+    let billCSS =[
+        {
+            left:"0px",
+            opacity:"1",
+            top:"0px"
+        },
+        {
+            left:"400px",
+            opacity:"0",
+            top:"400px"
+        }
+
+    ];
+
+    let billEgenskaper ={
+        duration: 2000,
+        easing: "ease-in-out",
+        iterations: 4,
+        direction: "alternate",
+        fill: "forwards"
+    };
+
+    bill.animate(billCSS,billEgenskaper);
+</script>
+
+</body>
